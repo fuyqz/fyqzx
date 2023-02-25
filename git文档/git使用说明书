@@ -1,28 +1,57 @@
-pwd 显示当前路径
+显示当前路径
+    pwd 
 
-git version 显示git版本号
+显示git版本号
+    git version 
 
 初始化git，生成.git隐藏文件
-git config --global user.name "输入你的昵称"
-git config --global user.email "输入你的邮箱"
-git init
+    git config --global user.name "输入你的昵称"
+    git config --global user.email "输入你的邮箱"
+    git init
 
 添加到git缓存中
-1 两种提交方式
-git add 文件路径  提交单个文件
-git add . 提交当前文件夹下所有文件
+    1 两种提交方式
+    git add 文件路径  提交单个文件
+    git add . 提交当前文件夹下所有文件
 
-2 确认提交
-git commit
-打开vim编辑器
-按 a/i 进入写（w）的模式，在顶行写入提交的内容，按esc 再按：wq保存退出
-或者简化版
-git commit -m "第二次提交"
-或者规范化 fix(修改模块)：修改了啥
-git commit -m "fix(text):change content" 
+    2 确认提交
+    git commit
+    打开vim编辑器
+    按 a/i 进入写（w）的模式，在顶行写入提交的内容，按esc 再按：wq保存退出
+    
+    或者简化版
+    git commit -m "第二次提交"
+    
+    或者规范化 "fix(修改模块)：修改了啥"
+    git commit -m "fix(text):change content" 
 
-git log 显示提交日志
-提交文件的唯一标识 commit ca24e06e89c7bffb17547339587b519132e6209f (HEAD -> master)
-作者名称 Author: 作者名 <邮箱>
-提交时间 Date:   Sat Feb 25 12:10:30 2023 +0800
-提交字段    第一次提交
+日志    
+    git log 显示提交日志
+
+    提交文件的唯一标识 commit ca24e06e89c7bffb17547339587b519132e6209f (HEAD -> master)
+    作者名称 Author: 作者名 <邮箱>
+    提交时间 Date:   Sat Feb 25 12:10:30 2023 +0800
+    提交字段    第一次提交
+
+分支
+    git branch xx 创建分支，分支需要保存
+    git branch -a 查看所有分支
+    git checkout xx  切换到xx版本
+    git merge xx 将xx整合到现在的分支
+
+
+下面是GitHub使用
+
+创建仓库 
+    右上角+号 第一个选项 new repository
+    选择归属 项目名字 
+    选择 公开/私有
+    点击 create repository
+
+上传仓库 
+    git init
+    git add README.md
+    git commit -m "first commit"
+    git branch -M main
+    git remote add origin https://github.com/fuyqz/fyqzx.git
+    git push -u origin main  
