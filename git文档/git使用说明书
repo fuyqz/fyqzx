@@ -14,9 +14,12 @@ git add . 提交当前文件夹下所有文件
 
 2 确认提交
 git commit
-
-3 打开vim编辑器
+打开vim编辑器
 按 a/i 进入写（w）的模式，在顶行写入提交的内容，按esc 再按：wq保存退出
+或者简化版
+git commit -m "第二次提交"
+或者规范化 fix(修改模块)：修改了啥
+git commit -m "fix(text):change content" 
 
 git log 显示提交日志
 提交文件的唯一标识 commit ca24e06e89c7bffb17547339587b519132e6209f (HEAD -> master)
