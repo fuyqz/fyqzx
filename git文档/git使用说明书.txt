@@ -94,5 +94,12 @@
                 git fetch upstream/main 更新并合并到自己的主分支main中
 
         常用命令解释
-            git pull 更新仓库文件到本地
-            git push 将本地文件推送到远程仓库 
+            git pull 更新仓库文件到本地(默认为main分支)
+            git push 将本地文件推送到远程仓库
+
+            如果需要推送到分支：
+                git checkout -b 分支名
+                git push origin 本地分支名:远程分支名  
+                    
+
+                 
