@@ -43,10 +43,10 @@
     提交字段    第一次提交
 
 分支
-    git branch xx 创建分支，分支需要保存
+    git branch 分支名 创建分支，分支需要保存
     git branch -a 查看所有分支
-    git checkout xx  切换到xx版本
-    git merge xx 将xx整合到现在的分支
+    git checkout 分支名  切换到xx版本
+    git merge 分支名 将该分支整合到现在的分支
 
     git branch -D xx 删除分支xx
 
@@ -72,13 +72,13 @@
         在他人项目中点击 fork 将项目复制到自己的GitHub中
         回到自己仓库，进入项目，点击code 复制https链接
         在自己电脑文件夹中使用终端
-        git clone xxx 将文件复制到本地
+        git clone 上游https链接 将文件复制到本地
         git remote -v  查看文件仓库链接
-        git remote add upstream xxx 添加上游代码库（xxx为上游https链接）
-        git checkout -b xxx 创建新的分支
+        git remote add upstream 上游https链接 添加上游代码库
+        git checkout -b 分支名称 创建新的分支
         git add .
-        git commit -m "xxxx"
-        git push -u origin xxx xxx为分支名
+        git commit -m "修改信息"
+        git push -u origin 分支名称 推送
 
         在上游仓库点击 Pull requests
         点击 new Pull request
@@ -97,9 +97,32 @@
             git pull 更新仓库文件到本地(默认为main分支)
             git push 将本地文件推送到远程仓库
 
-            如果需要推送到分支：
+            如果需要推送远程仓库分支
+                远程仓库点击branch 创建分支名称
+                git branch  查看本地分支
+                git branch  -a  查看远程仓库分支
                 git checkout -b 分支名
-                git push origin 本地分支名:远程分支名  
-                    
+                git push --set-upstream origin 远程分支名  
+            
+            删除分支    
+                git branch   查看本地分支
+                git branch -a 查看远程仓库分支
+                git checkout master 切换到主分支
+                git branch -d 分支名 删除分支(不能在该分支下删除，仅删除本地分支)
+                git branch -r -d origin/远程端分支名 删除远程端分支 
+
+            打tag
+                轻量级
+                    git tag 版本号
+
+                带注释
+                    git tag -a 版本号-m "注释信息"
+
+                git push origin master
+                git push origin --tag
+            删除tag
+                git tag -d 版本号     
+            另
+                git push origin：分支名把本地的操作推送到远程来执行（注意 分支名前带空格）           
 
                  
