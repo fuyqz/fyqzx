@@ -1,0 +1,98 @@
+显示当前路径
+    pwd 
+
+显示git版本号
+    git version 
+
+初始化git，生成.git隐藏文件
+    git config --global user.name "输入你的昵称"
+    git config --global user.email "输入你的邮箱"
+    git init
+
+添加到git缓存中
+    1 两种提交方式
+    git add 文件路径  提交单个文件
+    git add . 提交当前文件夹下所有文件
+
+    2 确认提交
+    git commit
+    打开vim编辑器
+    按 a/i 进入写（w）的模式，在顶行写入提交的内容，按esc 再按：wq保存退出
+    
+    或者简化版
+    git commit -m "第二次提交"
+    
+    或者规范化 "fix(修改模块)：修改了啥"
+    git commit -m "fix(text):change content" 
+
+    以下是修改规范
+    feat：新功能（feature）
+    fix：修补bug
+    docs：文档（documentation）
+    style： 格式（不影响代码运行的变动）
+    refactor：重构（即不是新增功能，也不是修改bug的代码变动）
+    test：增加测试
+    chore：构建过程或辅助工具的变动
+
+日志    
+    git log 显示提交日志
+
+    提交文件的唯一标识 commit ca24e06e89c7bffb17547339587b519132e6209f (HEAD -> master)
+    作者名称 Author: 作者名 <邮箱>
+    提交时间 Date:   Sat Feb 25 12:10:30 2023 +0800
+    提交字段    第一次提交
+
+分支
+    git branch xx 创建分支，分支需要保存
+    git branch -a 查看所有分支
+    git checkout xx  切换到xx版本
+    git merge xx 将xx整合到现在的分支
+
+    git branch -D xx 删除分支xx
+
+
+下面是GitHub使用
+
+新建项目，并上传到GitHub
+    创建仓库 
+        右上角+号 第一个选项 new repository
+        选择归属 项目名字 
+        选择 公开/私有
+        点击 create repository
+
+    上传仓库 
+        git init
+        git add .
+        git commit -m "first commit"
+        git branch -M main 创建mian分支，并切换main为主分支
+        git remote add origin xxx 提交上传地址
+        git push -u origin main  推送上传到网盘
+
+    加入开源项目
+        在他人项目中点击 fork 将项目复制到自己的GitHub中
+        回到自己仓库，进入项目，点击code 复制https链接
+        在自己电脑文件夹中使用终端
+        git clone xxx 将文件复制到本地
+        git remote -v  查看文件仓库链接
+        git remote add upstream xxx 添加上游代码库（xxx为上游https链接）
+        git checkout -b xxx 创建新的分支
+        git add .
+        git commit -m "xxxx"
+        git push -u origin xxx xxx为分支名
+
+        在上游仓库点击 Pull requests
+        点击 new Pull request
+        选择分支 
+        显示绿色√，点击 create Pull request
+        填写pr信息 标题 内容
+        点击 create Pull request
+        等待主分支同意
+
+        不是绿色√
+            版本不一致
+                git fetch upstream 更新最新代码
+                git fetch upstream/main 更新并合并到自己的主分支main中
+
+        常用命令解释
+            git pull 更新仓库文件到本地
+            git push 将本地文件推送到远程仓库 
